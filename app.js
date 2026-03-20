@@ -8,7 +8,7 @@ const quickSearchButtons = document.querySelectorAll("[data-quick]");
 let lastQuery = "";
 const previewTemplate = preview.innerHTML;
 
-const API_BASE = "http://localhost:3000";
+const API_BASE = "";
 const notFoundIcon = `data:image/svg+xml;utf8,${encodeURIComponent(
   `<svg xmlns="http://www.w3.org/2000/svg" width="240" height="160" viewBox="0 0 240 160">
     <rect width="240" height="160" fill="#111014"/>

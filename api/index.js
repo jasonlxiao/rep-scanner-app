@@ -5,10 +5,8 @@ const { getJson } = require("serpapi");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const SERPAPI_KEY =
-  process.env.SERPAPI_KEY ||
-  "0633d1d73cfd281c73ae2abb4cccfc1fdaf18bd089442cb11925c2c11c6911ce";
-const IMGBB_KEY = process.env.IMGBB_KEY;
+const SERPAPI_KEY = process.env.SERPAPI_KEY;
+const IMGBB_KEY = process.env.IMGBB_API_KEY;
 const ALLOWED_SITES = ["taobao.com", "weidian.com", "1688.com", "tmall.com"];
 const REP_SITES = ["taobao.com", "weidian.com", "1688.com", "tmall.com", "yupoo.com"];
 const TEXT_SITES = ["dhgate.com", "aliexpress.com", "temu.com"];
@@ -741,6 +739,10 @@ app.post("/api/search", async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`ThreadScout server running on http://localhost:${PORT}`);
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`ThreadScout server running on http://localhost:${PORT}`);
+  });
+}
+
+module.exports = app;
