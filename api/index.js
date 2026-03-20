@@ -739,10 +739,4 @@ app.post("/api/search", async (req, res) => {
   }
 });
 
-if (require.main === module) {
-  app.listen(PORT, () => {
-    console.log(`ThreadScout server running on http://localhost:${PORT}`);
-  });
-}
-
 module.exports = app;
