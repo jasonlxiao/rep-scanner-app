@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ThreadScout - Fashion Price Compare</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <section class="card card--search">
+        <div class="card__row">
+          <label class="label" for="search">Search by item, brand, or style</label>
+          <button class="chip chip--glow" type="button" data-quick="Denim Tears">Pro Drops</button>
+        </div>
+        <div class="search">
+          <span class="search__icon">⌕</span>
+          <input id="search" type="text" placeholder="Oversized blazer, linen shirt..." />
+        </div>
+        <div class="tag-row">
+          <button class="chip" type="button" data-quick="Yeezy Slide">Trending</button>
+          <button class="chip" type="button" data-quick="Essentials Hoodie">On Sale</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card__header">
+          <h2>Compare prices in a snap</h2>
+          <p>Upload a photo to match similar styles across retailers.</p>
+        </div>
+        <div class="upload">
+          <label class="upload__button" for="cameraInput">
+            <span class="upload__icon">📷</span>
+            <span>Capture or upload</span>
+          </label>
+          <input
+            id="cameraInput"
+            class="upload__input"
+            type="file"
+            accept="image/*"
+            capture="environment"
+          />
+          <div class="upload__preview" id="preview">
+            <p class="upload__placeholder">Preview appears here</p>
+            <div class="scan-overlay" id="scanOverlay" aria-hidden="true">
+              <div class="scan-overlay__content">
+                <p>Scanning...</p>
+                <div class="scan-bar">
+                  <span class="scan-bar__fill"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="upload__hint">Tip: Use good lighting to improve matches.</p>
+        </div>
+      </section>
+
+      <section class="card" id="matchesSection">
+        <div class="card__header">
+          <h2 id="matchesTitle">Top matches</h2>
+          <p>Based on popular queries right now.</p>
+        </div>
+        <div class="grid" id="matchesGrid">
+          <p class="upload__placeholder">No results yet. Upload a photo or search to begin!</p>
+        </div>
+      </section>
+
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
